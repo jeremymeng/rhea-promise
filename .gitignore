@@ -52,7 +52,9 @@ packages
 obj/*
 .env
 typings/
+typings-esm/
 dist/
+dist-esm/
 output/
 out/
 typedoc

@@ -1,4 +1,10 @@
-### 3.0.1 - (Unreleased)
+### 3.1.0 - (Unreleased)
+
+#### Features
+
+- Add ESM build and include them in package. 
+
+#### Bug Fixes
 
 - Fix a bug where `Connection` constructor isn't setting `operationTimeoutInSeconds` correctly.
 

@@ -1,9 +1,10 @@
 {
   "name": "rhea-promise",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "A Promisified layer over rhea AMQP client",
   "license": "Apache-2.0",
   "main": "./dist/lib/index.js",
+  "module": "./dist-esm/lib/index.js",
   "types": "./typings/lib/index.d.ts",
   "dependencies": {
     "debug": "^4.0.0",
@@ -19,8 +20,10 @@
   ],
   "files": [
     "dist/lib/",
+    "dist-esm/lib/",
     "lib/",
     "typings/lib/",
+    "typings-esm/lib/",
     "README.md",
     "LICENSE"
   ],
@@ -45,10 +48,10 @@
   "scripts": {
     "lint": "eslint .",
     "tsc": "tsc",
-    "prebuild": "rimraf dist && rimraf typings",
+    "prebuild": "rimraf dist* typings* *.tgz",
     "build": "npm run lint && npm run tsc",
     "test": "npm run build && mocha -r ts-node/register ./test/*.spec.ts",
-    "prepack": "npm i && npm run build"
+    "prepack": "npm i && npm run build && tsc -p tsconfig.esm.json"
   },
   "homepage": "https://github.com/amqp/rhea-promise",
   "repository": {
